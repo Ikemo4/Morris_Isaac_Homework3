@@ -1,0 +1,46 @@
+﻿@*
+    Page to allow User to add a movie to the model through the use of a form
+*@
+@{
+    ViewBag.Title = "Add a Movie";
+}
+
+@model MovieResponse 
+
+<form asp-action="AddMovie" method="post">
+    <label asp-for="Category">Category: </label>
+    <input asp-for="Category"/>
+    <br /><br />
+    <label asp-for="Title">Title: </label>
+    <input asp-for="Title"/>
+    <br /><br />
+    <label asp-for="Year">Year: </label>
+    <input asp-for="Year"/>
+    <br /><br />
+    <label asp-for="Director">Director: </label>
+    <input asp-for="Director"/>
+    <br /><br />
+    <label asp-for="Rating">Rating: </label>
+    <select asp-for="Rating">
+        <option>G</option>
+        <option>PG</option>
+        <option>PG-13</option>
+        <option>R</option>
+    </select>
+    <br /><br />
+    <label asp-for="Edited">Edited: </label>
+    <select asp-for="Edited">
+        <option value="">Select One:</option>
+        <option value="true">Yes</option>
+        <option value="false">No</option>
+    </select>
+    <br /><br />
+    <label asp-for="LentTo">Lent To: </label>
+    <input asp-for="LentTo"/>
+    <br /><br />
+    <label asp-for="Notes">Notes: </label>
+    <input asp-for="Notes"/>
+    <br /><br /><br />
+    <button type="submit">Add Movie</button>
+    <div asp-validation-summary="All"></div>
+</form>
