@@ -17,6 +17,7 @@
             @foreach (Morris_Isaac_Homework3.Models.MovieResponse x in Model)
             {
                 <tr>
+                    <td><button>Edit</button></td>
                     <td>@x.Category</td>
                     <td>@x.Title</td>
                     <td>@x.Year</td>
@@ -25,6 +26,7 @@
                     <td>@x.Edited</td>
                     <td>@x.LentTo</td>
                     <td>@x.Notes</td>
+                    <td><button>Delete</button></td>
                 </tr>
             }
         </tbody>
