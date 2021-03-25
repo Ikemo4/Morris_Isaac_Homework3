@@ -9,6 +9,9 @@ namespace Morris_Isaac_Homework3.Models
     //Comment here
     public class MovieResponse
     {
+        [Key]
+        [Required]
+        public int MovieID { get; set; }
         [Required]
         public string Category { get; set; }
         [Required]

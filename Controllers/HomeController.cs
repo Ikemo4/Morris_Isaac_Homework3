@@ -12,10 +12,12 @@ namespace Morris_Isaac_Homework3.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private MovieContext context { get; set; }
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, MovieContext con)
         {
             _logger = logger;
+            context = con;
         }
 
         //Index Page Action
@@ -35,7 +37,8 @@ namespace Morris_Isaac_Homework3.Controllers
         {
             if (ModelState.IsValid)
             {
-                TempStorage.AddMovies(movieResponse);
+                context.Movies.Add(movieResponse);
+                context.SaveChanges();
                 return RedirectToAction("Movies");
             }
             else
@@ -46,7 +49,7 @@ namespace Morris_Isaac_Homework3.Controllers
 
         public IActionResult Movies()
         {
-            return View(TempStorage.Movies);
+            return View(context.Movies);
         }
 
         //Podcasts Page Action

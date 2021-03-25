@@ -5,7 +5,7 @@
     ViewBag.Title = "Movies";
 }
 
-@model IEnumerable<Morris_Isaac_Homework3.Models.MovieResponse>
+@model IEnumerable<MovieResponse>
 
 <div>
     <table class="table table-striped">
@@ -14,7 +14,7 @@
         </thead>
 
         <tbody>
-            @foreach (Morris_Isaac_Homework3.Models.MovieResponse x in Model)
+            @foreach (var x in Model)
             {
                 <tr>
                     <td><button>Edit</button></td>
