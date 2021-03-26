@@ -17,7 +17,12 @@
             @foreach (var x in Model)
             {
                 <tr>
-                    <td><button>Edit</button></td>
+                    <td>
+                        <form asp-action="Edit" method="post">
+                            <button>Edit</button>
+                            <input type="hidden" id="movie" value="@x.MovieID" name="movieID" />
+                        </form>
+                    </td>
                     <td>@x.Category</td>
                     <td>@x.Title</td>
                     <td>@x.Year</td>
@@ -26,7 +31,11 @@
                     <td>@x.Edited</td>
                     <td>@x.LentTo</td>
                     <td>@x.Notes</td>
-                    <td><button>Delete</button></td>
+                    <td>
+                        <form>
+                            <button>Delete</button>
+                        </form>
+                    </td>
                 </tr>
             }
         </tbody>

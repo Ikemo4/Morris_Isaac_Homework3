@@ -52,6 +52,19 @@ namespace Morris_Isaac_Homework3.Controllers
             return View(context.Movies);
         }
 
+        //Edit Action that takes user to Edit page and allows
+        //them to edit selected movie
+        public IActionResult Edit(int movieID)
+        {
+            return View();
+        }
+
+        //Delete Action to delete selected movie
+        public IActionResult Delete(int movieID)
+        {
+            return View("Movies");
+        }
+
         //Podcasts Page Action
         public IActionResult Podcasts()
         {

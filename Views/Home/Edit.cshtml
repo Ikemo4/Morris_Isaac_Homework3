@@ -1,0 +1,42 @@
+﻿@*Edit Movie page*@
+@{
+    ViewBag.Title = "Edit Movie";
+}
+
+<form asp-action="AddMovie" method="post">
+    <label for="Category">Category: </label>
+    <input for="Category" />
+    <br /><br />
+    <label for="Title">Title: </label>
+    <input for="Title" />
+    <br /><br />
+    <label for="Year">Year: </label>
+    <input for="Year" />
+    <br /><br />
+    <label for="Director">Director: </label>
+    <input for="Director" />
+    <br /><br />
+    <label for="Rating">Rating: </label>
+    <select for="Rating">
+        <option>G</option>
+        <option>PG</option>
+        <option>PG-13</option>
+        <option>R</option>
+    </select>
+    <br /><br />
+    <label for="Edited">Edited: </label>
+    <select for="Edited">
+        <option value="">Select One:</option>
+        <option value="true">Yes</option>
+        <option value="false">No</option>
+    </select>
+    <br /><br />
+    <label for="LentTo">Lent To: </label>
+    <input for="LentTo" />
+    <br /><br />
+    <label for="Notes">Notes: </label>
+    <input for="Notes" />
+    <br /><br /><br />
+    <button type="submit">Save</button>
+    <div asp-validation-summary="All"></div>
+</form>
