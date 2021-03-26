@@ -62,6 +62,13 @@ namespace Morris_Isaac_Homework3.Controllers
         //Delete Action to delete selected movie
         public IActionResult Delete(int movieID)
         {
+            //assign Movie object that matches movieID (parameter passed in by delete button)
+            //to movie variable
+            var movie = context.Movies
+                .FirstOrDefault(m => m.MovieID == movieID);
+            //remove Movie from database
+            context.Movies.Remove(movie);
+            context.SaveChanges();
 
             return RedirectToAction("Movies");
         }
