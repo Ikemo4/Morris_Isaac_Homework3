@@ -32,8 +32,9 @@
                     <td>@x.LentTo</td>
                     <td>@x.Notes</td>
                     <td>
-                        <form>
+                        <form asp-action="Delete" method="post">
                             <button>Delete</button>
+                            <input type="hidden" id="movie" value="@x.MovieID" name="movieID" />
                         </form>
                     </td>
                 </tr>

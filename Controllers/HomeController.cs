@@ -62,7 +62,8 @@ namespace Morris_Isaac_Homework3.Controllers
         //Delete Action to delete selected movie
         public IActionResult Delete(int movieID)
         {
-            return View("Movies");
+
+            return RedirectToAction("Movies");
         }
 
         //Podcasts Page Action
