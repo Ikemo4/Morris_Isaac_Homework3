@@ -6,6 +6,7 @@
 @model MovieResponse
 
 <form asp-action="EditMovie" method="post">
+    <input type="hidden" asp-for="MovieID" name="movieID" />
     <label asp-for="Category">Category: </label>
     <input asp-for="Category" />
     <br /><br />
