@@ -67,8 +67,11 @@ namespace Morris_Isaac_Homework3.Controllers
         }
 
         [HttpPost]
-        public IActionResult EditMovie()
+        public IActionResult EditMovie(MovieResponse movie)
         {
+            context.Movies.Update(movie);
+            context.SaveChanges();
+
             return RedirectToAction("Movies");
         }
 
