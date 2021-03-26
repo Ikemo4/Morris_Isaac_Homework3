@@ -54,9 +54,22 @@ namespace Morris_Isaac_Homework3.Controllers
 
         //Edit Action that takes user to Edit page and allows
         //them to edit selected movie
+        [HttpPost]
         public IActionResult Edit(int movieID)
         {
-            return View();
+            //Find correct movie to update from context by comparing to
+            //movieID parameter. Set equal to variable movie
+            var movie = context.Movies
+                .FirstOrDefault(m => m.MovieID == movieID);
+
+            //pass Movie object to Edit view
+            return View(movie);
+        }
+
+        [HttpPost]
+        public IActionResult EditMovie()
+        {
+            return RedirectToAction("Movies");
         }
 
         //Delete Action to delete selected movie
